@@ -1,0 +1,33 @@
+<h1>{{INICIO}}</h1>
+
+<ul>
+    <li>
+    <a href="{% url 'home' %}">Home</a>
+    </li>
+    {% if user.is_authenticated %}  <!-- No hizo falta pasar 'user' desde views -->
+        <li>
+            <a href="{% url 'tasks' %}">Tasks Pending</a>
+        </li>
+        <li>
+            <a href="{% url 'tasksComplete' %}">Tasks completed</a>
+        </li>
+        <li>
+            <a href="{% url 'Logout' %}">Logout</a>
+        </li>
+    {% else %}
+        <li>
+            <a href="{% url 'signup' %}">Signup</a>
+        </li>
+        <li>
+            <a href="{% url 'Login' %}">Login</a>
+        </li>
+    {% endif %}
+
+
+
+        
+</ul>
+
+
+{% block content %}
+{% endblock %}

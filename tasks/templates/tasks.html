@@ -1,0 +1,28 @@
+ {% extends 'base.html' %}
+ 
+
+ {% block content%}
+
+
+<button>
+    <a href="{% url 'createTask' %}">Create task</a>
+</button>
+
+
+ {% for task in tasks %}
+
+    <ul>
+        <a href="{% url 'editTask' task.id %}">
+            
+            {% if task.important %}
+                <strong>{{task}}</strong>
+            {% else %}
+                <p>{{task}}</p>
+            {% endif %}</a>
+
+            {{task.datecompleted|date:'M j Y:i'}}
+    </ul>
+
+ {% endfor %}
+
+ {% endblock %}

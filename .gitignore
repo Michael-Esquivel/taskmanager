@@ -1,0 +1,3 @@
+#Los ficheros que quiero que ignore
+db.sqlite3
+__pycache__
